@@ -1,0 +1,13 @@
+#+title: Linux dots
+
+* Contents
++ [[https://awesomewm.org/][awesome-wm]] window manager
++ [[https://wezfurlong.org/wezterm/index.html][wezterm]] terminal emulator
+
+* TODO Further work
++ tmux
++ compositor
++ xrandr scripts
++ file manager
++ add symlink to also install emacs conf
++ automation script
