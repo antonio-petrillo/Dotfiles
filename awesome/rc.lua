@@ -621,6 +621,21 @@ client.connect_signal("request::titlebars", function(c)
     }
 end)
 
+client.connect_signal("property::floating", function(c)
+						 if c.floating and not (c.requests_no_titlebar or c.fullscreen) then
+							awful.titlebar.show(c)
+						 else
+							awful.titlebar.hide(c)
+						 end
+end)
+
+awful.tag.attached_connect_signal(nil, "property::layout", function(t)
+									 local float = t.layout.name == "floating"
+									 for _, c in pairs(t:clients()) do
+										c.floating = float
+									 end
+end)
+
 -- Enable sloppy focus, so that focus follows mouse.
 client.connect_signal("mouse::enter", function(c)
     c:emit_signal("request::activate", "mouse_enter", {raise = false})

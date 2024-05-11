@@ -5,25 +5,27 @@ local beautiful = require("beautiful")
 
 local keyboard_widget = function ()
    local kb_widget = wibox.widget {
-	  kb_layout = "us",
 	  {
-		 font = "fontawesome",
-		 markup = "",
-		 halign = "center",
-		 valign = "center",
-		 widget = wibox.widget.textbox
+		 kb_layout = "us",
+		 {
+			font = "fontawesome",
+			markup = "",
+			halign = "center",
+			valign = "center",
+			widget = wibox.widget.textbox
+		 },
+		 {
+			id = "kb",
+			markup = "us",
+			halign = "center",
+			valign = "center",
+			widget = wibox.widget.textbox
+		 },
+		 spacing = 10,
+		 layout = wibox.layout.fixed.horizontal
 	  },
-	  {
-		 id = "kb",
-		 markup = "us",
-		 halign = "center",
-		 valign = "center",
-		 widget = wibox.widget.textbox
-	  },
-	  -- margin = 4,
-	  -- widget = wibox.container.margin,
-	 -- widget = wibox.container.margin,
-	  layout = wibox.layout.fixed.horizontal,
+	  widget = wibox.container.margin,
+	  margins = 4,
 	  toggle = function(self)
 		 if self.kb_layout == "us" then
 			self.kb_layout = "us-intl"
