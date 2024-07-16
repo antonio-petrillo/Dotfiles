@@ -1,0 +1,104 @@
+@import "theme.css";
+
+* {
+    font-family: "JetBrains Mono", "FontAwesome";
+    font-size: 10px;
+    min-height: 0;
+    font-weight: bold;
+}
+
+window#waybar {
+    background: @transparent;
+    background-color: @bg-main;
+    color: @fg-main;
+    transition-property: background-color;
+    transition-duration: 0.1s;
+	border-bottom: 1px solid @bg-dim;
+}
+
+#window {
+    margin: 2;
+    padding-left: 8;
+    padding-right: 8;
+}
+
+button {
+    box-shadow: inset 0 -3px transparent;
+    border: none;
+    border-radius: 0;
+}
+
+button:hover {
+    background: inherit;
+    border-top: 2px solid @fg-dim;
+}
+
+#workspaces button {
+    padding: 0 4px;
+}
+
+#workspaces button.focused {
+    background-color: @bg-dim;
+    color: @fg-alt;
+    border-top: 2px solid @blue;
+}
+
+#workspaces button.urgent {
+    background-color: @red-cooler;
+	color: @bg-main;
+	border-top: @red;
+}
+
+#pulseaudio,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#wireplumber,
+#tray,
+#mode,
+#scratchpad {
+    margin: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#clock {
+}
+
+#clock.date {
+}
+
+#pulseaudio {
+}
+
+#network {
+}
+
+#idle_inhibitor {
+    margin-right: 8px;
+    color: @fg-dim;
+}
+
+#idle_inhibitor.activated {
+    color: @blue;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @fg-main;
+    border-bottom: 2px solid @green;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left>widget:first-child>#workspaces {
+    margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right>widget:last-child>#workspaces {
+    margin-right: 10;
+}
