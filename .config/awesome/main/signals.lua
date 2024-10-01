@@ -2,6 +2,7 @@ local gears = require("gears")
 local awful = require("awful")
 local wibox = require("wibox")
 local beautiful = require("beautiful")
+local utils = require("main.utils")
 
 -- replace windows on screen deconnection
 client.connect_signal("manage", function (c)
@@ -86,3 +87,18 @@ end)
 -- change border color for focused windows
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+
+-- local function set_wallpaper(s)
+--     -- Wallpaper
+--     if beautiful.wallpaper then
+--         local wallpaper = beautiful.wallpaper
+--         -- If wallpaper is a function, call it with the screen
+--         if type(wallpaper) == "function" then
+--             wallpaper = wallpaper(s)
+--         end
+--         gears.wallpaper.maximized(wallpaper, s, true)
+--     end
+-- end
+
+-- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
+screen.connect_signal("property::geometry", utils.set_wallpaper)
