@@ -1,0 +1,17 @@
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 18.0
+
+[font.bold]
+family = "Fira Code"
+style = "Regular"
+
+[keyboard]
+bindings = [
+  { key = "V", mods = "Control|Shift", action = "Paste" },
+  { key = "C", mods = "Control|Shift", action = "Copy" },
+
+  { key = "L", mods = "Control",       action = "ClearLogNotice" },
+]

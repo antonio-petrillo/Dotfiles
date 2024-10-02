@@ -1,3 +1,4 @@
+-- inspired(copied) by: https://github.com/streetturtle/awesome-wm-widgets/blob/master/battery-widget/battery.lua
 local gears = require("gears")
 local awful = require("awful")
 local wibox = require("wibox")
