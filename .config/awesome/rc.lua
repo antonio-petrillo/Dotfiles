@@ -29,6 +29,17 @@ local rules = require("main.rules")
 
 require("main.signals")
 
+local battery = require("ui.widgets.battery")
+local taglist_buttons = require("bindings.taglist")
+local tasklist_buttons = require("bindings.tasklist")
+
+globalkeys = require("bindings.globals")
+clientkeys = require("bindings.clients")
+clientbuttons = require("bindings.clients_buttons")
+mousebuttons = require("bindings.mouse")
+
+require("main.autostart")
+
 beautiful.init(user.theme_dir)
 
 awful.layout.layouts = layouts
@@ -41,8 +52,6 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 
 menubar.utils.terminal = user.terminal -- Set the terminal for applications that require it
 
-local taglist_buttons = require("bindings.taglist")
-local tasklist_buttons = require("bindings.tasklist")
 
 -- Keyboard map indicator and switcher
 mykeyboardlayout = awful.widget.keyboardlayout()
@@ -97,6 +106,7 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+            battery(),
             mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
@@ -104,25 +114,9 @@ awful.screen.connect_for_each_screen(function(s)
         },
     }
 end)
--- }}}
-
--- {{{ Mouse bindings
-root.buttons(gears.table.join(
-    awful.button({ }, 3, function () main_menu:toggle() end),
-    awful.button({ }, 4, awful.tag.viewnext),
-    awful.button({ }, 5, awful.tag.viewprev)
-))
--- }}}
-
-globalkeys = require("bindings.globals")
-clientkeys = require("bindings.clients")
-clientbuttons = require("bindings.clients_buttons")
 
 
--- Set keys
+root.buttons(mousebuttons)
 root.keys(globalkeys)
--- }}}
 
 awful.rules.rules = rules(clientkeys, globalkeys)
-
-awful.spawn("setxkbmap us -option ctrl:nocaps")
