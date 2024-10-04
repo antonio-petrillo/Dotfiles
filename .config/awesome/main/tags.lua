@@ -8,8 +8,8 @@ function _M.get ()
 
   local tagpairs = {
 --  names  = { "term", "net", "edit", "place", 5, 6, 7, 8, 9 },
-    names  = { "dev", "web", "term", "chat"},
-    layouts = {layouts[1], layouts[3], layouts[3], layouts[3] }
+    names  = { "main", "term", "web", "app", "chat"},
+    layouts = {layouts[1], layouts[3], layouts[3], layouts[3], layouts[3]}
   }
 
   awful.screen.connect_for_each_screen(function(s)

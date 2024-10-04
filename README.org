@@ -19,3 +19,5 @@ Just execute:
 #+begin_src bash
 cd /path/to/Dots && stow . -t ~/
 #+end_src
+** TODO Refinement
++ Change rules in awesome-wm to use tags vars instead of hardcoded names
