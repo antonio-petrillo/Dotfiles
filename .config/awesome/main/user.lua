@@ -9,6 +9,7 @@ local chosen_theme = themes[1]
 
 local _CONSTANTS = {
   modkey    = "Mod4",
+  altkey    = "Mod1",
   terminal  = "alacritty",
   browser   = "firefox",
   files     = "nautilus",

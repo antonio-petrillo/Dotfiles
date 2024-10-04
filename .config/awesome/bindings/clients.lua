@@ -9,7 +9,14 @@ return gears.table.join(
             c:raise()
         end,
         {description = "toggle fullscreen", group = "client"}),
-    awful.key({ user.modkey, "Shift"   }, "q",      function (c) c:kill()                         end,
+    awful.key({ user.modkey, "Shift"   }, "q",      function (c)
+        local num_clients = #awful.screen.focused().selected_tag:clients()
+        if num_clients > 1 then
+          c:kill()
+        end
+    end,
+              {description = "close (leave last open)", group = "client"}),
+    awful.key({ user.altkey,           }, "F4",      function (c) c:kill() end,
               {description = "close", group = "client"}),
     awful.key({ user.modkey, "Shift" }, "f",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),
