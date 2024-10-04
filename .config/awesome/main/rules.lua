@@ -74,9 +74,12 @@ function _M.get(clientkeys, clientbuttons)
       properties = { tag = "main" } },
     { rule = { class = "Emacs-gtk+x11" },
       properties = { tag = "main" } },
-    { rule = { class = "org.gnome.Nautilus" },
-      properties = { tag = "main" } },
 
+    { rule = { class = "org.gnome.Nautilus" },
+      properties = { tag = "app" } },
+
+    { rule = { class = "teams-for-linux" },
+      properties = { tag = "chat" } },
 
     { rule = { class = "Alacritty" },
       properties = { tag = "term" } },

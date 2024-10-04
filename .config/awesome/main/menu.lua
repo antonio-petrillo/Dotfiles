@@ -1,5 +1,5 @@
 local awful = require("awful")
-local hotkeys_popup = require("awful.hotkeys_popup.keys").widget
+local hotkeys_popup = require("awful.hotkeys_popup")
 local user = require("main.user")
 
 local beautiful = require("beautiful")
