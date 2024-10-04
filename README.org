@@ -1,0 +1,21 @@
+#+title: Dots
+
+* Install on Fedora
+** Required packages
+| Package   | Why                           | Note             |
+|-----------+-------------------------------+------------------|
+| emacs     | Of course the best editor     |                  |
+| ripgrep   | Required by Doom              |                  |
+| fd        | Required by Doom              |                  |
+| awesome   | My favorite x11 wm            |                  |
+| acpi      | For awesome-wm battery widget |                  |
+| cmake     | Required for Vterm            |                  |
+| vterm     | Required for Vterm            |                  |
+| tmux      |                               |                  |
+| picom     | Compositor for awesome-wm     |                  |
+| alacritty | Terminal for awesome-wm       | Try a better fit |
+** Install
+Just execute:
+#+begin_src bash
+cd /path/to/Dots && stow . -t ~/
+#+end_src
