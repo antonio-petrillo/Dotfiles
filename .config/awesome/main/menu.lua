@@ -9,6 +9,8 @@ local menu = {}
 menu.awesome = {
   { "hotkeys", function() hotkeys_popup.show_help(nil, awful.screen.focused()) end },
   { "restart", awesome.restart },
+  { "start compositor", function() awful.spawn("picom") end  },
+  { "stop compositor", function() awful.spawn("killall picom") end  },
   { "quit",    function() awesome.quit() end },
 }
 

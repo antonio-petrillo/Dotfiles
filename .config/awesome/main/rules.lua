@@ -87,6 +87,8 @@ function _M.get(clientkeys, clientbuttons)
       properties = { tag = "app" } },
     { rule = { class = "steamwebhelper" },
       properties = { tag = "app" } },
+    { rule = { class = "ktouch" },
+      properties = { tag = "app" } },
 
     { rule = { class = "teams-for-linux" },
       properties = { tag = "chat" } },
