@@ -74,8 +74,18 @@ function _M.get(clientkeys, clientbuttons)
       properties = { tag = "main" } },
     { rule = { class = "Emacs-gtk+x11" },
       properties = { tag = "main" } },
+    { rule = { class = "dev.zed.Zed" },
+      properties = { tag = "main" } },
 
     { rule = { class = "org.gnome.Nautilus" },
+      properties = { tag = "app" } },
+    { rule = { class = "Bitwarden" },
+      properties = { tag = "app" } },
+    { rule = { class = "bitwarden" },
+      properties = { tag = "app" } },
+    { rule = { class = "steam" },
+      properties = { tag = "app" } },
+    { rule = { class = "steamwebhelper" },
       properties = { tag = "app" } },
 
     { rule = { class = "teams-for-linux" },
